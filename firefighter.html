@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>소방관화면</title>
+  <link rel="stylesheet" href="firefighter.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- (1) 배경화면 -->
+    <img class="background" src="images/배경3.png" alt="배경화면" />
+
+    <!-- (2) 뒤로가기 버튼(클릭 시 choice.html 이동) -->
+    <a class="back-link" href="choice.html" aria-label="직업 선택 화면으로 이동">
+      <img class="back-button" src="images/뒤로가기버튼.png" alt="뒤로가기 버튼" />
+    </a>
+
+    <!-- (3) Flex 1 -->
+    <div class="flex1">
+      <!-- 1) 왼쪽 영역: 소방관 이미지 (가수 → 소방관으로 변경) -->
+      <div class="left-area">
+        <img class="firefighter-img" src="images/소방관2.png" alt="소방관 이미지" />
+      </div>
+
+      <!-- 2) 오른쪽 영역: 말풍선(최초 소개 문구 변경) -->
+      <div class="right-area speech-bubble">
+        <p id="bubbleText">소방관은 불을 끄고 위험한 곳에서 사람들을 안전하게 구해 주는 직업입니다.</p>
+      </div>
+    </div>
+
+    <!-- (4) Flex 2: 질문 버튼 4개 -->
+    <div class="flex2">
+      <button type="button" class="q-btn q1" aria-label="질문 1">
+        <img src="images/질문1.png" alt="질문 1 버튼" />
+      </button>
+      <button type="button" class="q-btn q2" aria-label="질문 2">
+        <img src="images/질문2.png" alt="질문 2 버튼" />
+      </button>
+      <button type="button" class="q-btn q3" aria-label="질문 3">
+        <img src="images/질문3.png" alt="질문 3 버튼" />
+      </button>
+      <button type="button" class="q-btn q4" aria-label="질문 4">
+        <img src="images/질문4.png" alt="질문 4 버튼" />
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // 질문 버튼 클릭 → 말풍선 답변 변경 (소방관 / 2문장 / 70~100자 내외)
+    const bubble = document.getElementById("bubbleText");
+    const buttons = document.querySelectorAll(".q-btn");
+
+    const answers = [
+      "소방관은 안전 규칙과 응급처치를 배우고 체력을 길러야 합니다. 또 위기 상황에서도 침착하게 판단하는 훈련이 필요합니다.",
+      "불을 끄고 사람을 무사히 구했을 때 가장 뿌듯합니다. “살려줘서 고마워요”라는 말을 들으면 힘이 납니다.",
+      "소방관은 화재나 사고에서 사람과 동물을 안전하게 지켜 줍니다. 위험을 빨리 막아 모두가 안심하고 살게 도와줍니다.",
+      "두려워도 포기하지 않는 용기와 서로 돕는 마음이 필요합니다. 그리고 규칙을 지키며 끝까지 책임지는 태도가 중요합니다."
+    ];
+
+    buttons.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        bubble.textContent = answers[i];
+      });
+    });
+  </script>
+</body>
+</html>

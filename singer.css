@@ -1,0 +1,111 @@
+/* singer.css */
+
+/* 기본 설정 */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000; /* (1-2) 남는 부분은 검은 여백 */
+}
+
+/* 1) 배경화면 */
+.background{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* (1-1) 비율 유지 + 전체 보이기 */
+  z-index: 0;
+}
+
+/* 2) 뒤로가기 버튼 */
+.back-link{
+  position: absolute;
+  left: 10%;
+  top: 5%;
+  transform: translate(-50%, -50%); /* 기준점을 '지점'에 맞추기 */
+  z-index: 10;
+  display: inline-block;
+}
+
+.back-button{
+  width: 5vw;          /* (2-2) 화면 가로의 5% */
+  height: auto;
+  display: block;
+}
+
+/* 3) Flex1 */
+.flex1{
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 80vw;         /* (3-2) 화면 가로의 80% */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vw;
+  z-index: 5;
+}
+
+/* (3-3) 왼쪽 칸 이미지 */
+.left-area{
+  width: 20vw;         /* 화면 가로의 20% */
+  flex: 0 0 auto;
+}
+
+.singer-img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* (3-4) 오른쪽 말풍선 */
+.right-area.speech-bubble{
+  width: 60vw;         /* 화면 가로의 60% */
+  flex: 0 0 auto;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 2vw;  /* 둥근 모서리 */
+  padding: 2vw;
+}
+
+.right-area.speech-bubble p{
+  margin: 0;
+  font-size: 2.5vw;    /* 글씨: 화면 가로의 2.5% */
+  line-height: 1.3;
+}
+
+/* 4) Flex2 */
+.flex2{
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  width: 80vw;         /* (4-2) 화면 가로의 80% */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  z-index: 5;
+}
+
+/* (4-3) 질문 버튼 */
+.q-btn{
+  border: none;
+  background: transparent; /* <- 여기서 끊겼던 부분 완성 */
+  padding: 0;
+  cursor: pointer;
+  width: 15vw;         /* 화면 가로의 15% */
+  height: auto;
+}
+
+.q-btn img{
+  width: 100%;
+  height: auto;
+  display: block;
+}

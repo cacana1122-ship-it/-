@@ -1,0 +1,49 @@
+/* 기본 화면 설정 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;   /* 남는 여백 검은색 처리 */
+}
+
+/* 전체 화면 컨테이너 */
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* 배경 이미지
+   - 전체 영역 사용
+   - 비율 유지 + 전부 보이게 contain
+*/
+.container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* 직업 선택 그리드 */
+.grid {
+    position: absolute;
+
+    /* 가로 중앙 */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 세로: 아래쪽 40% 지점 (위에서 약 60%) */
+    top: 35%;
+
+    /* 3 x 2 배열 */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    gap:30px;
+}
+
+/* 버튼 이미지 크기 */
+.grid img {
+    width: 15vw;   /* 화면 가로의 10% */
+    height: auto;
+}
